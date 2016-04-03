@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :comments
   get 'pages/info'
   get "pages/info"
   # root :to => redirect('/ideas')
@@ -57,4 +59,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resource :user, only: [:edit, :update]
 end
